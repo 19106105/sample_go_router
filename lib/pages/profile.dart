@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -7,10 +8,13 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        child: const Center(
+      body: Column(
+        children: [const Center(
           child: Text('Profile'),
-        ),),
+        ),ElevatedButton(onPressed: (){
+           context.go("/profile/profile_picture");
+            }, child: const Text('Profile Picture')),
+        ]),
     );
   }
 }

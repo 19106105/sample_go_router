@@ -4,6 +4,7 @@ import 'package:sample_go_router/pages/about.dart';
 import 'package:sample_go_router/pages/contact_us.dart';
 import 'package:sample_go_router/pages/home.dart';
 import 'package:sample_go_router/pages/profile.dart';
+import 'package:sample_go_router/pages/profile_picture.dart';
 
 
 void main() {
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
 
   final GoRouter _router = GoRouter(routes: [
     GoRoute(path: "/", builder: ((context, state) => const Home())),
-    GoRoute(path: "/profile", builder: ((context, state) => const Profile())),
+    GoRoute(path: "/profile", builder: ((BuildContext context,GoRouterState state) => const Profile())),
     GoRoute(path: "/about", builder: ((context, state) => const About())),
-    GoRoute(path: "/contact_us", builder: ((context, state) => const ContactUs()))
+    GoRoute(path: "/contact_us", builder: ((context, state) => const ContactUs())),
+    GoRoute(path: "/profile/profile_picture", builder: ((BuildContext context,GoRouterState state) => const ProfilePicture()),)
   ]);
 }
